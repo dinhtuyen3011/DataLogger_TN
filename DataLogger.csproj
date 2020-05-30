@@ -105,6 +105,25 @@
     <Compile Include="GetValueToSaveData.Designer.cs">
       <DependentUpon>GetValueToSaveData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005300716342_init-db.cs" />
+    <Compile Include="Migrations\202005300716342_init-db.designer.cs">
+      <DependentUpon>202005300716342_init-db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005300719243_populate-chanel.cs" />
+    <Compile Include="Migrations\202005300719243_populate-chanel.designer.cs">
+      <DependentUpon>202005300719243_populate-chanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005300729453_seed-chanels.cs" />
+    <Compile Include="Migrations\202005300729453_seed-chanels.designer.cs">
+      <DependentUpon>202005300729453_seed-chanels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005300737149_update-olddata-model.cs" />
+    <Compile Include="Migrations\202005300737149_update-olddata-model.designer.cs">
+      <DependentUpon>202005300737149_update-olddata-model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Chanel.cs" />
     <Compile Include="Models\OldData.cs" />
     <Compile Include="oldDataForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +138,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GetValueToSaveData.resx">
       <DependentUpon>GetValueToSaveData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300716342_init-db.resx">
+      <DependentUpon>202005300716342_init-db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300719243_populate-chanel.resx">
+      <DependentUpon>202005300719243_populate-chanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300729453_seed-chanels.resx">
+      <DependentUpon>202005300729453_seed-chanels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300737149_update-olddata-model.resx">
+      <DependentUpon>202005300737149_update-olddata-model.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="oldDataForm.resx">
       <DependentUpon>oldDataForm.cs</DependentUpon>

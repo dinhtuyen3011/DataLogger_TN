@@ -134,35 +134,35 @@ namespace DataLogger
 
             rows.RemoveAt(0);
 
-            for(int i = 0; i < rows.Count(); i++)
-            {
-                for(int j = 1; j < rows[i].Length; j ++)
-                {
-                    oldDatas.Add(new OldData()
-                    {
-                        oldTime = Convert.ToDateTime(rows[i][0]),
-                        Chanel = chanels[j - 1],
-                        Value = float.Parse(rows[i][j])
-                    }); ;
-                }
-            }
+            //for(int i = 0; i < rows.Count(); i++)
+            //{
+            //    for(int j = 1; j < rows[i].Length; j ++)
+            //    {
+            //        oldDatas.Add(new OldData()
+            //        {
+            //            oldTime = Convert.ToDateTime(rows[i][0]),
+            //            Chanel = chanels[j - 1],
+            //            Value = float.Parse(rows[i][j])
+            //        }); ;
+            //    }
+            //}
         }
         private void draw(string chanel = "", bool all = false)
         {
-            if(!all && chanel != "")
-            {
-                var data = oldDatas.Where(d => d.Chanel == chanel).ToList();
-                data.ForEach(d =>
-                {
-                    chart2.Series[d.Chanel].Points.AddXY(d.oldTime.ToString("d-M-yyyy HH:mm:ss"), d.Value);
-                });
-            } 
-            else {
-                oldDatas.ForEach(d =>
-                {
-                    chart2.Series[d.Chanel].Points.AddXY(d.oldTime.ToString("d-M-yyyy HH:mm:ss"), d.Value);
-                });
-            }
+            //if(!all && chanel != "")
+            //{
+            //    var data = oldDatas.Where(d => d.Chanel == chanel).ToList();
+            //    data.ForEach(d =>
+            //    {
+            //        chart2.Series[d.Chanel].Points.AddXY(d.oldTime.ToString("d-M-yyyy HH:mm:ss"), d.Value);
+            //    });
+            //} 
+            //else {
+            //    oldDatas.ForEach(d =>
+            //    {
+            //        chart2.Series[d.Chanel].Points.AddXY(d.oldTime.ToString("d-M-yyyy HH:mm:ss"), d.Value);
+            //    });
+            //}
 
         }
         private void channel1Displays_CheckStateChanged(object sender, EventArgs e)
