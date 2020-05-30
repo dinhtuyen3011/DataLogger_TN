@@ -128,6 +128,8 @@ namespace DataLogger
             getFileDialog.Filter = "CSV files (*.csv)|*.csv";
             getFileDialog.Title = "Select File Location";
             getFileDialog.ShowDialog();
+
+            // TODO: handle exception if user not select any file or wrong file format.
             List<string[]> rows = File.ReadAllLines(getFileDialog.FileName).Select(x => x.Split(',')).ToList();
 
             rows.RemoveAt(0);
