@@ -247,33 +247,24 @@ namespace DataLogger
 
         private void ModeAxisX_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            if (((ToolStripMenuItem) e.ClickedItem).Checked)
-            {
-                return;
-            }
-
             foreach (ToolStripMenuItem toolStripMenuItem in ModeAxisX.DropDownItems)
             {
                 toolStripMenuItem.Checked = false;
             }
 
-            ((ToolStripMenuItem) e.ClickedItem).Checked = true;
         }
+
         private void chếĐộCuộnToolStripMenuItem_CheckStateChanged(object sender, EventArgs e)
         {
             Mode = 1;
         }
+
         private void chếĐộCốĐịnhToolStripMenuItem_CheckStateChanged(object sender, EventArgs e)
         {
+            loadDataToolStripMenuItem.Checked = false;
             Mode = 0;
         }
-        ////////////////////////////////////////
-        private void loadDataToolStripMenuItem_CheckStateChanged(object sender, EventArgs e)
-        {
-            oldDataForm formOldData = new oldDataForm();
-            formOldData.ShowDialog();
-        }
-        //
+
         #region interactive
         private void operand1_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -392,8 +383,10 @@ namespace DataLogger
             max = Math.Max(d, max);
             return Math.Max(e,max);
         }
+
         private List<int> maxY = new List<int>();
         float max = 0;
+
         private void GraphDraw()
         {
             float x = 0;
@@ -547,20 +540,23 @@ namespace DataLogger
                 }));
             }
         }
+
         private float channelX = 0;
         private float channelY = 0;
         private List<float> channel1List = new List<float>();
         private List<float> channel2List = new List<float>();
         private List<float> channel3List = new List<float>();
         private List<float> channel4List = new List<float>();
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             Timer1.Interval = 1000;
             Time_now.Text = DateTime.Now.ToString();
             Data_Rate.Text = Data_Sample.ToString() + " mẫu/s";
+
             DataSave();
         }
-        //close form
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             serialPort.Close();
@@ -746,6 +742,48 @@ namespace DataLogger
                 }
             }
             #endregion
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog getFileDialog = new OpenFileDialog();
+
+                getFileDialog.Filter = "CSV files (*.csv)|*.csv";
+                getFileDialog.Title = "Select File Location";
+                getFileDialog.ShowDialog();
+
+                if(getFileDialog.FileName == null || getFileDialog.FileName == "")
+                {
+                    return;
+                }
+
+                oldDataForm formOldData = new oldDataForm(getFileDialog.FileName);
+
+                var str = getFileDialog.FileName;
+
+                formOldData.ShowDialog();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void chếĐộCuộnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            chếĐộCuộnToolStripMenuItem.Checked = true;
+        }
+
+        private void chếĐộCốĐịnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            chếĐộCốĐịnhToolStripMenuItem.Checked = true;
         }
     }
 }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -97,44 +97,44 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.White;
-            chartArea1.BackColor = System.Drawing.Color.White;
-            chartArea1.BorderColor = System.Drawing.Color.White;
-            chartArea1.BorderWidth = 0;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea4.BackColor = System.Drawing.Color.White;
+            chartArea4.BorderColor = System.Drawing.Color.White;
+            chartArea4.BorderWidth = 0;
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(0, 28);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Kênh 1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Color = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.Name = "Kênh 2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series3.Legend = "Legend1";
-            series3.Name = "Kênh 3";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series4.Legend = "Legend1";
-            series4.Name = "Kênh 4";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Legend = "Legend1";
-            series5.Name = "Tương tác";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Series.Add(series5);
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series16.Legend = "Legend1";
+            series16.Name = "Kênh 1";
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series17.Color = System.Drawing.Color.Red;
+            series17.Legend = "Legend1";
+            series17.Name = "Kênh 2";
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series18.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series18.Legend = "Legend1";
+            series18.Name = "Kênh 3";
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series19.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            series19.Legend = "Legend1";
+            series19.Name = "Kênh 4";
+            series20.ChartArea = "ChartArea1";
+            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series20.Legend = "Legend1";
+            series20.Name = "Tương tác";
+            this.chart1.Series.Add(series16);
+            this.chart1.Series.Add(series17);
+            this.chart1.Series.Add(series18);
+            this.chart1.Series.Add(series19);
+            this.chart1.Series.Add(series20);
             this.chart1.Size = new System.Drawing.Size(921, 393);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
@@ -152,7 +152,7 @@
             this.interactive});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(510, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(511, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -181,21 +181,21 @@
             // TwentySecondsToolStripMenuItem
             // 
             this.TwentySecondsToolStripMenuItem.Name = "TwentySecondsToolStripMenuItem";
-            this.TwentySecondsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.TwentySecondsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.TwentySecondsToolStripMenuItem.Text = "30 giây";
             this.TwentySecondsToolStripMenuItem.Click += new System.EventHandler(this.TwentySecondsToolStripMenuItem_Click);
             // 
             // MinutesToolStripMenuItem
             // 
             this.MinutesToolStripMenuItem.Name = "MinutesToolStripMenuItem";
-            this.MinutesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MinutesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.MinutesToolStripMenuItem.Text = "1 phút";
             this.MinutesToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.MinutesToolStripMenuItem_CheckStateChanged);
             // 
             // SelectTime
             // 
             this.SelectTime.Name = "SelectTime";
-            this.SelectTime.Size = new System.Drawing.Size(180, 22);
+            this.SelectTime.Size = new System.Drawing.Size(153, 22);
             this.SelectTime.Text = "Chọn thời gian";
             this.SelectTime.CheckStateChanged += new System.EventHandler(this.SelectTime_CheckStateChanged);
             // 
@@ -218,7 +218,7 @@
             // 
             this.channel1ToolStripMenuItem.CheckOnClick = true;
             this.channel1ToolStripMenuItem.Name = "channel1ToolStripMenuItem";
-            this.channel1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.channel1ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.channel1ToolStripMenuItem.Text = "Kênh 1";
             this.channel1ToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.channel1ToolStripMenuItem_CheckStateChanged);
             // 
@@ -226,7 +226,7 @@
             // 
             this.channel2ToolStripMenuItem.CheckOnClick = true;
             this.channel2ToolStripMenuItem.Name = "channel2ToolStripMenuItem";
-            this.channel2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.channel2ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.channel2ToolStripMenuItem.Text = "Kênh 2";
             this.channel2ToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.channel2ToolStripMenuItem_CheckStateChanged);
             // 
@@ -234,7 +234,7 @@
             // 
             this.channel3ToolStripMenuItem.CheckOnClick = true;
             this.channel3ToolStripMenuItem.Name = "channel3ToolStripMenuItem";
-            this.channel3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.channel3ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.channel3ToolStripMenuItem.Text = "Kênh 3";
             this.channel3ToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.channel3ToolStripMenuItem_CheckStateChanged);
             // 
@@ -242,7 +242,7 @@
             // 
             this.channel4ToolStripMenuItem.CheckOnClick = true;
             this.channel4ToolStripMenuItem.Name = "channel4ToolStripMenuItem";
-            this.channel4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.channel4ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.channel4ToolStripMenuItem.Text = "Kênh 4";
             this.channel4ToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.channel4ToolStripMenuItem_CheckStateChanged);
             // 
@@ -250,7 +250,7 @@
             // 
             this.interactive_displays_chartToolStripMenuItem.CheckOnClick = true;
             this.interactive_displays_chartToolStripMenuItem.Name = "interactive_displays_chartToolStripMenuItem";
-            this.interactive_displays_chartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.interactive_displays_chartToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.interactive_displays_chartToolStripMenuItem.Text = "Tương tác";
             this.interactive_displays_chartToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.interactive_displays_chartToolStripMenuItem_CheckStateChanged);
             // 
@@ -258,7 +258,7 @@
             // 
             this.allToolStripMenuItem.CheckOnClick = true;
             this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-            this.allToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.allToolStripMenuItem.Text = "Tất cả";
             this.allToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.allToolStripMenuItem_CheckStateChanged);
             // 
@@ -278,23 +278,25 @@
             // chếĐộCuộnToolStripMenuItem
             // 
             this.chếĐộCuộnToolStripMenuItem.Name = "chếĐộCuộnToolStripMenuItem";
-            this.chếĐộCuộnToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.chếĐộCuộnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.chếĐộCuộnToolStripMenuItem.Text = "Chế độ cuộn";
             this.chếĐộCuộnToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.chếĐộCuộnToolStripMenuItem_CheckStateChanged);
+            this.chếĐộCuộnToolStripMenuItem.Click += new System.EventHandler(this.chếĐộCuộnToolStripMenuItem_Click);
             // 
             // chếĐộCốĐịnhToolStripMenuItem
             // 
             this.chếĐộCốĐịnhToolStripMenuItem.Name = "chếĐộCốĐịnhToolStripMenuItem";
-            this.chếĐộCốĐịnhToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.chếĐộCốĐịnhToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.chếĐộCốĐịnhToolStripMenuItem.Text = "Chế độ cố định";
             this.chếĐộCốĐịnhToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.chếĐộCốĐịnhToolStripMenuItem_CheckStateChanged);
+            this.chếĐộCốĐịnhToolStripMenuItem.Click += new System.EventHandler(this.chếĐộCốĐịnhToolStripMenuItem_Click);
             // 
             // loadDataToolStripMenuItem
             // 
             this.loadDataToolStripMenuItem.Name = "loadDataToolStripMenuItem";
-            this.loadDataToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.loadDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadDataToolStripMenuItem.Text = "Dữ liệu cũ";
-            this.loadDataToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.loadDataToolStripMenuItem_CheckStateChanged);
+            this.loadDataToolStripMenuItem.Click += new System.EventHandler(this.loadDataToolStripMenuItem_Click);
             // 
             // interactive
             // 
@@ -305,7 +307,7 @@
             this.interactive.Image = ((System.Drawing.Image)(resources.GetObject("interactive.Image")));
             this.interactive.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.interactive.Name = "interactive";
-            this.interactive.Size = new System.Drawing.Size(132, 22);
+            this.interactive.Size = new System.Drawing.Size(133, 22);
             this.interactive.Text = "Tương tác tín hiệu";
             // 
             // operand1
@@ -488,7 +490,7 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(62, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(63, 17);
             this.toolStripStatusLabel1.Text = "Trạng thái:";
             // 
             // Status_connect
@@ -517,7 +519,7 @@
             // 
             this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(91, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(92, 17);
             this.toolStripStatusLabel2.Text = "Tốc độ lấy mẫu:";
             // 
             // Data_Rate
@@ -543,6 +545,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Data Logger";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

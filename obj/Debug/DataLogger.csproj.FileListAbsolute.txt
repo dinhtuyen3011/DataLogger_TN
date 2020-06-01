@@ -71,3 +71,7 @@ C:\Users\toiye\Desktop\DataLogger_TN\obj\Debug\DataLogger.csproj.CoreCompileInpu
 C:\Users\toiye\Desktop\DataLogger_TN\obj\Debug\DataLogger.csproj.CopyComplete
 C:\Users\toiye\Desktop\DataLogger_TN\obj\Debug\DataLogger.exe
 C:\Users\toiye\Desktop\DataLogger_TN\obj\Debug\DataLogger.pdb
+C:\Users\toiye\Desktop\DataLogger_TN\bin\Debug\EntityFramework.dll
+C:\Users\toiye\Desktop\DataLogger_TN\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\toiye\Desktop\DataLogger_TN\bin\Debug\EntityFramework.xml
+C:\Users\toiye\Desktop\DataLogger_TN\bin\Debug\EntityFramework.SqlServer.xml

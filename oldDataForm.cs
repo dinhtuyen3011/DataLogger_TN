@@ -28,8 +28,15 @@ namespace DataLogger
 
         private List<OldData> oldDatas = new List<OldData>();
 
-        public oldDataForm()
+
+        public string CSV;
+
+        public string getCSV() => CSV;
+
+        public oldDataForm(string csvPath = "")
         {
+            CSV = csvPath;
+
             InitializeComponent();
             chart2.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Gray;
             chart2.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = ChartDashStyle.NotSet;
@@ -62,7 +69,6 @@ namespace DataLogger
             chart2.ChartAreas[0].CursorY.LineColor = Color.Gray;
             chart2.MouseWheel += chart2_MouseWheels;
             CheckForIllegalCrossThreadCalls = false;
-            
         }
         private void chart2_MouseWheels(object sender, MouseEventArgs e)
         {
@@ -123,14 +129,7 @@ namespace DataLogger
         DateTime oDate;
         private void readCSV()
         {
-            OpenFileDialog getFileDialog = new OpenFileDialog();
-            
-            getFileDialog.Filter = "CSV files (*.csv)|*.csv";
-            getFileDialog.Title = "Select File Location";
-            getFileDialog.ShowDialog();
-
-            // TODO: handle exception if user not select any file or wrong file format.
-            List<string[]> rows = File.ReadAllLines(getFileDialog.FileName).Select(x => x.Split(',')).ToList();
+            List<string[]> rows = File.ReadAllLines(CSV).Select(x => x.Split(',')).ToList();
 
             rows.RemoveAt(0);
 
