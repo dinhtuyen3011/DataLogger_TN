@@ -134,7 +134,7 @@
             // 
             this.channel1Displays.CheckOnClick = true;
             this.channel1Displays.Name = "channel1Displays";
-            this.channel1Displays.Size = new System.Drawing.Size(180, 22);
+            this.channel1Displays.Size = new System.Drawing.Size(110, 22);
             this.channel1Displays.Text = "Kênh 1";
             this.channel1Displays.CheckStateChanged += new System.EventHandler(this.channel1Displays_CheckStateChanged);
             // 
@@ -142,7 +142,7 @@
             // 
             this.channel2Displays.CheckOnClick = true;
             this.channel2Displays.Name = "channel2Displays";
-            this.channel2Displays.Size = new System.Drawing.Size(180, 22);
+            this.channel2Displays.Size = new System.Drawing.Size(110, 22);
             this.channel2Displays.Text = "Kênh 2";
             this.channel2Displays.CheckStateChanged += new System.EventHandler(this.channel2Displays_CheckStateChanged);
             // 
@@ -150,7 +150,7 @@
             // 
             this.channel3Displays.CheckOnClick = true;
             this.channel3Displays.Name = "channel3Displays";
-            this.channel3Displays.Size = new System.Drawing.Size(180, 22);
+            this.channel3Displays.Size = new System.Drawing.Size(110, 22);
             this.channel3Displays.Text = "Kênh 3";
             this.channel3Displays.CheckStateChanged += new System.EventHandler(this.channel3Displays_CheckStateChanged);
             // 
@@ -158,7 +158,7 @@
             // 
             this.channel4Displays.CheckOnClick = true;
             this.channel4Displays.Name = "channel4Displays";
-            this.channel4Displays.Size = new System.Drawing.Size(180, 22);
+            this.channel4Displays.Size = new System.Drawing.Size(110, 22);
             this.channel4Displays.Text = "Kênh 4";
             this.channel4Displays.CheckStateChanged += new System.EventHandler(this.channel4Displays_CheckStateChanged);
             // 
@@ -166,7 +166,7 @@
             // 
             this.allDisplays.CheckOnClick = true;
             this.allDisplays.Name = "allDisplays";
-            this.allDisplays.Size = new System.Drawing.Size(180, 22);
+            this.allDisplays.Size = new System.Drawing.Size(110, 22);
             this.allDisplays.Text = "Tất cả";
             this.allDisplays.CheckStateChanged += new System.EventHandler(this.allDisplays_CheckStateChanged);
             // 

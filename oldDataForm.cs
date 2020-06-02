@@ -17,8 +17,8 @@ namespace DataLogger
 {
     public partial class oldDataForm : Form
     {
-        Point? prevPosition = null;
-        ToolTip tooltip = new ToolTip();
+        Point? prevPosition_chart2 = null;
+        ToolTip tooltip_chart2 = new ToolTip();
         private readonly static string CHANEL1 = "Chanel 1";
         private readonly static string CHANEL2 = "Chanel 2";
         private readonly static string CHANEL3 = "Chanel 3";
@@ -26,8 +26,7 @@ namespace DataLogger
 
         private List<string> chanels = new List<string>() { CHANEL1, CHANEL2, CHANEL3, CHANEL4 };
 
-        private List<OldData> oldDatas = new List<OldData>();
-
+        private static List<OldData> oldDatas = new List<OldData>();
 
         public string CSV;
 
@@ -52,6 +51,7 @@ namespace DataLogger
             chart2.ChartAreas[0].CursorX.IsUserEnabled = true;
             chart2.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
 
+            chart2.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
             chart2.ChartAreas[0].AxisX.ScaleView.SmallScrollSize = 0.5D;
             chart2.ChartAreas[0].CursorX.LineColor = Color.Gray;
             chart2.ChartAreas[0].AxisX.ScaleView.MinSize = 1;
@@ -84,12 +84,14 @@ namespace DataLogger
             {
             }
             // mouseMove
+
             var pos = e.Location;
-            if (prevPosition.HasValue && pos == prevPosition.Value)
+            if (prevPosition_chart2.HasValue && pos == prevPosition_chart2.Value)
                 return;
-            tooltip.RemoveAll();
-            prevPosition = pos;
-            var results = chart2.HitTest(pos.X, pos.Y, false, ChartElementType.DataPoint);
+            tooltip_chart2.RemoveAll();
+            prevPosition_chart2 = pos;
+            var results = chart2.HitTest(pos.X, pos.Y, false,
+                                            ChartElementType.DataPoint);
             foreach (var result in results)
             {
                 if (result.ChartElementType == ChartElementType.DataPoint)
@@ -101,16 +103,12 @@ namespace DataLogger
                         var pointYPixel = result.ChartArea.AxisY.ValueToPixelPosition(prop.YValues[0]);
                         var channel = result.Series.ToString();
                         var y_value = Math.Round(prop.YValues[0], 3);
-                        if (Math.Abs(pos.X - pointXPixel) < 2 &&
-                            Math.Abs(pos.Y - pointYPixel) < 2)
-                        {
-                            tooltip.Show(
-                                channel.Remove(0, 7) + ", Điểm :" + prop.XValue + ", Giá trị điện áp:" + y_value,
-                                this.chart2, pos.X, pos.Y - 15);
-                        }
+                        tooltip_chart2.Show("Kênh "+channel.Remove(0,14)+", Thời điểm: " +prop.AxisLabel.ToString()+ ", Value= " + y_value, this.chart2,
+                                        pos.X, pos.Y - 15);
                     }
                 }
             }
+            
         }
         private void oldDataForm_Load(object sender, EventArgs e)
         {

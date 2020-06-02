@@ -75,3 +75,7 @@ C:\Users\toiye\Desktop\DataLogger_TN\bin\Debug\EntityFramework.dll
 C:\Users\toiye\Desktop\DataLogger_TN\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\toiye\Desktop\DataLogger_TN\bin\Debug\EntityFramework.xml
 C:\Users\toiye\Desktop\DataLogger_TN\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Violet\Desktop\DataLogger\DataLogger\bin\Debug\EntityFramework.dll
+C:\Users\Violet\Desktop\DataLogger\DataLogger\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Violet\Desktop\DataLogger\DataLogger\bin\Debug\EntityFramework.xml
+C:\Users\Violet\Desktop\DataLogger\DataLogger\bin\Debug\EntityFramework.SqlServer.xml
