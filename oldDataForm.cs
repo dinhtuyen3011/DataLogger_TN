@@ -1,4 +1,6 @@
-﻿using DataLogger.Model;
+﻿
+using DataLogger.Model;
+using Serial_Oscilloscope;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,14 +21,16 @@ namespace DataLogger
     {
         Point? prevPosition_chart2 = null;
         ToolTip tooltip_chart2 = new ToolTip();
-        private readonly static string CHANEL1 = "Chanel 1";
-        private readonly static string CHANEL2 = "Chanel 2";
-        private readonly static string CHANEL3 = "Chanel 3";
-        private readonly static string CHANEL4 = "Chanel 4";
+        ToolTip tooltip_interact = new ToolTip();
+        private readonly static string CHANEL1 = "Kênh 1";
+        private readonly static string CHANEL2 = "Kênh 2";
+        private readonly static string CHANEL3 = "Kênh 3";
+        private readonly static string CHANEL4 = "Kênh 4";
+        private readonly static string INTERACTIVE = "Tương tác";
 
-        private List<string> chanels = new List<string>() { CHANEL1, CHANEL2, CHANEL3, CHANEL4 };
+        private List<string> chanels = new List<string>() { CHANEL1, CHANEL2, CHANEL3, CHANEL4, INTERACTIVE};
 
-        private static List<OldData> oldDatas = new List<OldData>();
+        private List<OldData> oldDatas = new List<OldData>();
 
         public string CSV;
 
@@ -56,7 +60,7 @@ namespace DataLogger
             chart2.ChartAreas[0].CursorX.LineColor = Color.Gray;
             chart2.ChartAreas[0].AxisX.ScaleView.MinSize = 1;
             chart2.ChartAreas[0].AxisX.ScaleView.SmallScrollMinSize = 1;
-            chart2.ChartAreas[0].AxisX.Title = "Mẫu";
+            chart2.ChartAreas[0].AxisX.Title = "Thời điểm";
             chart2.ChartAreas[0].AxisY.Title = "Điện áp (V )";
             chart2.ChartAreas[0].AxisX.MajorTickMark.Enabled = false;
             chart2.ChartAreas[0].AxisY.MajorTickMark.Enabled = false;
@@ -69,7 +73,9 @@ namespace DataLogger
             chart2.ChartAreas[0].CursorY.LineColor = Color.Gray;
             chart2.MouseWheel += chart2_MouseWheels;
             CheckForIllegalCrossThreadCalls = false;
+            
         }
+        
         private void chart2_MouseWheels(object sender, MouseEventArgs e)
         {
             try
@@ -103,28 +109,14 @@ namespace DataLogger
                         var pointYPixel = result.ChartArea.AxisY.ValueToPixelPosition(prop.YValues[0]);
                         var channel = result.Series.ToString();
                         var y_value = Math.Round(prop.YValues[0], 3);
-                        tooltip_chart2.Show("Kênh "+channel.Remove(0,14)+", Thời điểm: " +prop.AxisLabel.ToString()+ ", Value= " + y_value, this.chart2,
+                        tooltip_chart2.Show(channel.Remove(0,7)+", Thời điểm: " +prop.AxisLabel.ToString()+ ", Value= " + y_value, this.chart2,
                                         pos.X, pos.Y - 15);
                     }
                 }
             }
             
         }
-        private void oldDataForm_Load(object sender, EventArgs e)
-        {
-            readCSV();
-            
-            chart2.Series.Clear();
-
-            chanels.ForEach(c =>
-            {
-                chart2.Series.Add(c);
-                chart2.Series[c].ChartType = SeriesChartType.Line;
-                chart2.Series[c].Color = c == CHANEL1 ? Color.Red : c == CHANEL2 ? Color.Green : c == CHANEL3 ? Color.Blue : Color.Gray;
-                chart2.Series[c].IsVisibleInLegend = false;
-            });
-        }
-        DateTime oDate;
+        
         private void readCSV()
         {
             List<string[]> rows = File.ReadAllLines(CSV).Select(x => x.Split(',')).ToList();
@@ -152,6 +144,7 @@ namespace DataLogger
                 data.ForEach(d =>
                 {
                     chart2.Series[d.Chanel].Points.AddXY(d.oldTime.ToString("d-M-yyyy HH:mm:ss"), d.Value);
+                    
                 });
             } 
             else {
@@ -164,35 +157,81 @@ namespace DataLogger
         }
         private void channel1Displays_CheckStateChanged(object sender, EventArgs e)
         {
-            allDisplays.Checked = false;
-            draw(CHANEL1);
+            chart2.Series[0].Points.Clear();
+            if (channel1Displays.Checked)
+            {
+                
+                allDisplays.Checked = false;
+                draw(CHANEL1);
+            }
+            else 
+            {
+                chart2.Series[0].Points.Clear();
+                
+            }
         }
         private void channel2Displays_CheckStateChanged(object sender, EventArgs e)
         {
-            allDisplays.Checked = false;
-            draw(CHANEL2);
+            chart2.Series[1].Points.Clear();
+            if (channel2Displays.Checked)
+            {
+                allDisplays.Checked = false;
+                draw(CHANEL2);
+            }
+            else
+            {
+                chart2.Series[1].Points.Clear();
+                
+            }
         }
         private void channel3Displays_CheckStateChanged(object sender, EventArgs e)
         {
-            allDisplays.Checked = false;
-            draw(CHANEL3);
+            chart2.Series[2].Points.Clear();
+            if (channel3Displays.Checked)
+            {
+                allDisplays.Checked = false;
+                draw(CHANEL3);
+            }
+            else
+            {
+                chart2.Series[2].Points.Clear();
+                
+            }
         }
         private void channel4Displays_CheckStateChanged(object sender, EventArgs e)
         {
-            allDisplays.Checked = false;
-            draw(CHANEL4);
+            chart2.Series[3].Points.Clear();
+            if (channel4Displays.Checked)
+            {
+                allDisplays.Checked = false;
+                draw(CHANEL4);
+            }
+            else
+            {
+                chart2.Series[3].Points.Clear();
+            }
         }
         private void allDisplays_CheckStateChanged(object sender, EventArgs e)
         {
-            channel1Displays.Checked = false;
-            channel2Displays.Checked = false;
-            channel3Displays.Checked = false;
-            channel4Displays.Checked = false;
-            chart2.Series[0].Points.Clear();
-            chart2.Series[1].Points.Clear();
-            chart2.Series[2].Points.Clear();
-            chart2.Series[3].Points.Clear();
-            draw("", true);
+            if (allDisplays.Checked)
+            {
+                channel1Displays.Checked = false;
+                channel2Displays.Checked = false;
+                channel3Displays.Checked = false;
+                channel4Displays.Checked = false;
+                chart2.Series[0].Points.Clear();
+                chart2.Series[1].Points.Clear();
+                chart2.Series[2].Points.Clear();
+                chart2.Series[3].Points.Clear();
+                draw("", true);
+            }
+            else
+            {
+                chart2.Series[0].Points.Clear();
+                chart2.Series[1].Points.Clear();
+                chart2.Series[2].Points.Clear();
+                chart2.Series[3].Points.Clear();
+            }
         }
 
         private void oldDataForm_Load_1(object sender, EventArgs e)
@@ -205,26 +244,33 @@ namespace DataLogger
             {
                 chart2.Series.Add(c);
                 chart2.Series[c].ChartType = SeriesChartType.Line;
-                chart2.Series[c].Color = c == CHANEL1 ? Color.Red : c == CHANEL2 ? Color.Green : c == CHANEL3 ? Color.Blue : Color.Gray;
-                chart2.Series[c].IsVisibleInLegend = false;
+                chart2.Series[c].Color = c == CHANEL1 ? Color.Red : c == CHANEL2 ? Color.Green : c == CHANEL3 ? Color.Blue: c==CHANEL4? Color.Brown : Color.Gray ;
+                
+                
             });
         }
-
-        private void timeOfData_Click(object sender, EventArgs e)
+        private void toArray()
         {
-            DateTimePicker dateTimePicker1 = new DateTimePicker();
-
-            // Set the MinDate and MaxDate.
-            dateTimePicker1.MinDate = new DateTime(1985, 6, 20);
-            dateTimePicker1.MaxDate = DateTime.Today;
-
-            // Set the CustomFormat string.
-            dateTimePicker1.CustomFormat = "MMMM dd, yyyy - dddd";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-
-            // Show the CheckBox and display the control as an up-down control.
-            dateTimePicker1.ShowCheckBox = true;
-            dateTimePicker1.ShowUpDown = true;
+            //chanels.ForEach(c=>c==)
         }
+        List<OldData> a = new List<OldData>();
+        private void interactiveSelection_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InterativeForm interativeForm = new InterativeForm(CSV);
+                interativeForm.ShowDialog();
+
+                interativeForm.result.ForEach(rst =>
+                {
+                    chart2.Series[4].Points.AddXY(rst.oldTime.ToString("d-M-yyyy HH:mm:ss"), rst.Value);
+                });
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+       
     }
 }

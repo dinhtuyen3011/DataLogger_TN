@@ -743,12 +743,7 @@ namespace DataLogger
             }
             #endregion
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        public string filePath { get; set; }
         private void loadDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -758,15 +753,13 @@ namespace DataLogger
                 getFileDialog.Filter = "CSV files (*.csv)|*.csv";
                 getFileDialog.Title = "Select File Location";
                 getFileDialog.ShowDialog();
-
+                
                 if(getFileDialog.FileName == null || getFileDialog.FileName == "")
                 {
                     return;
                 }
-
+                
                 oldDataForm formOldData = new oldDataForm(getFileDialog.FileName);
-
-                var str = getFileDialog.FileName;
 
                 formOldData.ShowDialog();
             }

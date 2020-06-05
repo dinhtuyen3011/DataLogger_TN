@@ -7,11 +7,12 @@ using System.Windows.Markup;
 
 namespace DataLogger.Model
 {
-    class OldData
+    public class OldData
     {
-        public int Ms { get; set; }
+        //public int Ms { get; set; }
         public DateTime oldTime { get; set; }
         public string Chanel { get; set; }
-        public float Value { get; set; }
+        public double Value { get; set; }
+        
     }
 }
